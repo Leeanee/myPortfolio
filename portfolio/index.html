@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leeane Glazel Reyes · UI/UX Designer & Front-End Developer</title>
+<meta name="description" content="Portfolio of Leeane Glazel Reyes, a UI/UX-focused BSIT student and aspiring Front-End Developer.">
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="theme-color" content="#5b4bff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Leeane Glazel Reyes · UI/UX Designer &amp; Front-End Developer">
+<meta property="og:description" content="Portfolio of Leeane Glazel Reyes, a UI/UX-focused BSIT student and aspiring Front-End Developer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235b4bff'/%3E%3Ctext x='32' y='45' font-size='36' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#home">Leeane Glazel Reyes</a>
+  <nav aria-label="Main">
+   <ul id="navlist">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="icon-btn" id="theme" aria-label="Toggle dark mode">◐</button></li>
+   </ul>
+  </nav>
+  <button class="icon-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">☰</button>
+ </div>
+</header>
+
+<main id="main">
+<section id="home" class="hero">
+ <div class="wrap hero-inner">
+  <div>
+   <p class="badge"><span class="dot"></span>Open to internships in UI/UX and front-end</p>
+   <h1>Hi, I’m <span class="grad">Leeane</span>.<br>I design and build clear, accessible interfaces.</h1>
+   <p class="lead">I’m a BSIT student who turns user needs into polished Figma designs and responsive, well-built interfaces. I’m looking for an internship in UI/UX design or front-end development.</p>
+   <div class="cta">
+    <a class="btn primary" href="#projects">View My Projects</a>
+    <a class="btn ghost" href="cv.pdf" download>Download CV</a>
+    <a class="btn ghost" href="#contact">Contact Me</a>
+   </div>
+   <ul class="chips" aria-label="Core skills"><li>Figma</li><li>React</li><li>TypeScript</li><li>Accessibility</li></ul>
+  </div>
+  <div class="photo-wrap"><img class="photo" src="images/profile.jpg" alt="Portrait of Leeane Glazel Reyes" width="340" height="425"
+       onerror="this.onerror=null;this.src='images/profile-placeholder.svg'"></div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap reveal">
+  <p class="eyebrow">About me</p>
+  <h2>Design thinking with a developer’s eye</h2>
+  <div class="grid cols">
+   <div class="card"><h3>Background</h3><p>I’m a Bachelor of Science in Information Technology student at Rogationist College – Cavite, expected to graduate in 2026/2027. I design interfaces in Figma and build them with React, TypeScript, and CSS, and I’m looking for an internship where I can learn from a professional design team. I’ve designed and built interfaces for academic web and desktop projects, including my thesis.</p></div>
+   <div class="card"><h3>What I value</h3><p>User-centered design, accessible interfaces, clean code, and handoffs developers can build without guesswork.</p></div>
+   <div class="card"><h3>Career goals</h3><p>To join a product team where I can design, prototype, and ship interfaces while growing in both UX and front-end engineering.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="wrap reveal">
+  <p class="eyebrow">Skills & technologies</p>
+  <h2>What I work with</h2>
+  <div class="grid cols">
+   <div class="card"><h3>UI/UX design</h3><ul class="tags"><li>User research</li><li>Wireframing</li><li>Prototyping</li><li>Design systems</li><li>Usability testing</li><li>Accessibility</li></ul></div>
+   <div class="card"><h3>Front-end</h3><ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li><li>TypeScript</li><li>Bootstrap</li><li>JavaFX</li><li>FXML</li><li>Responsive design</li></ul></div>
+   <div class="card"><h3>Programming & databases</h3><ul class="tags"><li>Java</li><li>PHP</li><li>Laravel</li><li>TypeScript</li><li>MySQL</li><li>Oracle Database</li></ul></div>
+   <div class="card"><h3>Tools</h3><ul class="tags"><li>Figma</li><li>Git & GitHub</li><li>VS Code</li><li>IntelliJ IDEA</li><li>Jira</li><li>Vercel</li><li>Notion</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap">
+  <p class="eyebrow">Projects & portfolio</p>
+  <h2>Selected work</h2>
+  <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+  <div class="grid cols" id="projectGrid"></div>
+ </div>
+</section>
+
+<section id="resume">
+ <div class="wrap reveal">
+  <p class="eyebrow">CV / Resume</p>
+  <h2>Projects & education</h2>
+  <div class="resume">
+   <div>
+    <h3>Academic projects</h3>
+    <ul class="timeline">
+     <li><strong>Office for Student Discipline Web Application System</strong><br><small>UI/UX Designer &amp; Front-End Developer · Academic thesis project</small><p>Designed responsive Student, Department Head, and Administrator interfaces in Figma. Created user flows, layouts, forms, and interactive prototypes focused on usability and consistency, then built the UI components with React, TypeScript, and CSS.</p><div class="links"><a href="https://drive.google.com/file/d/1Nz_udFyVIlvX0bNNIJBeRvFBf5d0SXPi/view?usp=drive_link" target="_blank" rel="noopener">Watch demo video ↗</a></div></li>
+     <li><strong>Office for Student Discipline Desktop Application System</strong><br><small>UI/UX Designer · Final output</small><p>Designed wireframes, layouts, and interactive prototypes in Figma, then translated them into a functional JavaFX desktop application with FXML and CSS. Collaborated with the development team to implement and refine the designs based on system requirements.</p><div class="links"><a href="https://drive.google.com/file/d/19KgQREosq_-VjUVAOdlGT_Ukk9jr1QWf/view?usp=drive_link" target="_blank" rel="noopener">Watch demo video ↗</a></div></li>
+     <li><strong>E-Commerce Website</strong><br><small>UI/UX Designer &amp; Front-End Developer</small><p>Developed and implemented responsive shopping pages with Laravel, PHP, HTML, and CSS, focused on intuitive navigation, visual consistency, and a user-friendly shopping experience.</p></li>
+    </ul>
+   </div>
+   <div>
+    <h3>Education</h3>
+    <ul class="timeline"><li><strong>Bachelor of Science in Information Technology</strong><br><small>Rogationist College – Cavite · Expected graduation 2026/2027</small></li></ul>
+    <div class="cta">
+     <a class="btn primary" href="cv.pdf" download>Download CV</a>
+     <a class="btn ghost" href="cv.pdf" target="_blank" rel="noopener">View CV</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap reveal"><div class="panel">
+  <p class="eyebrow">Contact</p>
+  <h2>Let’s work together</h2>
+  <p class="lead">I’m looking for an internship in UI/UX design or front-end development. The quickest way to reach me is by email. I’m based in Silang, Cavite, Philippines, and you can also call or text me at <a href="tel:+639103069468" style="color:inherit">+63 910 306 9468</a>.</p>
+  <div class="cta">
+   <a class="btn primary" href="mailto:leeaneglazel.reyes@gmail.com">Contact Me</a>
+   <a class="btn ghost" href="https://github.com/Leeanee" target="_blank" rel="noopener">GitHub</a>
+   <a class="btn ghost" href="https://www.figma.com/@leeane" target="_blank" rel="noopener">Figma</a>
+  </div>
+ </div></div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> Leeane Glazel Reyes · Designed &amp; built by me</div></footer>
+
+<script src="js/data/projects.js" defer></script>
+<script src="js/ui/nav.js" defer></script>
+<script src="js/ui/theme.js" defer></script>
+<script src="js/ui/reveal.js" defer></script>
+<script src="js/ui/projects.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
