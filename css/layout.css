@@ -1,4 +1,6 @@
 /* Page structure: header, sections, hero, grids, footer */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:clip}
 .wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
 section{padding:6rem 0}
 #skills,#resume{background:color-mix(in srgb,var(--surface) 55%,transparent);border-block:1px solid var(--line)}
@@ -18,22 +20,72 @@ nav a:hover,nav a.active{color:var(--text);background:var(--surface-2)}
 .hero{position:relative;padding:6.5rem 0 5rem}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(var(--line) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%)}
 .hero-inner{display:grid;grid-template-columns:1.35fr 1fr;gap:4rem;align-items:center}
+.hero-inner>*{min-width:0}
 .photo-wrap{position:relative;justify-self:center;width:min(100%,340px)}
 .photo-wrap::before{content:"";position:absolute;inset:16px -16px -16px 16px;border-radius:32px;background:var(--grad);transform:rotate(3deg);opacity:.9}
-.photo{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:32px;border:5px solid var(--bg);box-shadow:var(--shadow)}
+.photo{position:relative;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:32px;border:5px solid var(--bg);box-shadow:var(--shadow)}
 .grid{display:grid;gap:1.5rem}
-.cols{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+/* min(100%,280px) stops cards overflowing screens narrower than 280px + padding */
+.cols{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
 .section-head{max-width:640px;margin-bottom:2.5rem}
-.resume{display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.resume{display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
 .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.cta .btn{justify-content:center}
+.badge .dot{flex:none}
+.timeline .links{margin-top:0;padding-top:.6rem}
 footer{border-top:1px solid var(--line);padding:2.2rem 0;color:var(--muted);text-align:center;font-size:.95rem}
+
+/* Touch screens: don't leave cards/buttons "stuck" raised after a tap */
+@media (hover:none){
+ .card.project:hover,.cta .btn:hover{transform:none}
+ .card.project:hover .thumb img{transform:none}
+}
+
+/* Tablets */
+@media (max-width:960px){
+ .hero-inner{gap:2.5rem}
+}
+
+/* Phones */
 @media (max-width:760px){
- #menu{display:inline-block}
- nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);padding:.75rem 1.5rem 1.2rem;border-bottom:1px solid var(--line)}
+ .wrap{padding:0 1.25rem}
+ .logo{font-size:1.1rem}
+
+ /* menu */
+ #menu{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0}
+ nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);padding:.5rem 1.25rem 1rem;border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(0,0,0,.08);max-height:calc(100vh - 68px);max-height:calc(100dvh - 68px);overflow-y:auto}
  nav ul.open{display:flex}
- nav a{display:block;padding:.7rem .5rem}
- section{padding:4rem 0}
- .hero{padding:3rem 0 2.5rem}
- .hero-inner{grid-template-columns:1fr;gap:2.5rem}
- .photo-wrap{order:-1;width:190px;justify-self:start}
+ nav a{display:block;padding:.8rem .5rem;font-size:1rem}
+ #theme{width:44px;height:44px;margin:.4rem 0 0 .5rem}
+
+ /* spacing + type */
+ section{padding:3.5rem 0}
+ .hero{padding:2rem 0 2.5rem}
+ .hero h1{font-size:clamp(2rem,9.5vw,2.6rem)}
+ h2{font-size:clamp(1.6rem,7vw,2rem)}
+ .lead{font-size:1.05rem}
+
+ /* hero: small photo on top, text below */
+ .hero-inner{grid-template-columns:1fr;gap:1.75rem}
+ .photo-wrap{order:-1;width:150px;justify-self:start}
+ .photo-wrap::before{inset:12px -12px -12px 12px;border-radius:24px}
+ .photo{border-radius:24px}
+ .hero .badge{border-radius:14px;font-size:.82rem;line-height:1.4;align-items:flex-start;padding:.5rem .9rem;margin-bottom:1.2rem}
+ .hero .badge .dot{margin-top:.4rem}
+ .chips{margin-top:1.5rem}
+
+ /* buttons share the row, then stretch */
+ .cta{gap:.6rem;margin-top:1.5rem}
+ .cta .btn{flex:1 1 auto;padding:.8rem 1.1rem;font-size:.95rem}
+
+ /* cards */
+ .wrap .card:not(.project){padding:1.35rem}
+ .grid .project .body{padding:1.2rem 1.25rem 1.4rem}
+ #filters{margin-bottom:1.5rem}
+ .grid{gap:1.1rem}
+
+ /* resume + contact */
+ .resume{gap:2.5rem}
+ .wrap .panel{border-radius:22px;padding:1.75rem 1.4rem}
+ footer{padding:1.6rem 0;font-size:.88rem}
 }
