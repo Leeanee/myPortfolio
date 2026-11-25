@@ -10,7 +10,7 @@ const projects = [
     type: "Development",
     desc: "Responsive web system for the Office for Student Discipline at Rogationist College, with separate interfaces for students, department heads, and administrators. Built as my thesis project.",
     tools: ["React", "TypeScript", "CSS"],
-    image: "",
+    image: "images/projects/rcosd-web-app.png",
     colors: ["#0891b2", "#2563eb"],
     links: {
       code: "https://github.com/Leeanee/RCOSD-WEB-APP",
@@ -43,21 +43,11 @@ const projects = [
     type: "Development",
     desc: "Desktop version of the Office for Student Discipline system. I designed the screens in Figma, then built them in JavaFX with FXML and CSS.",
     tools: ["JavaFX", "FXML", "CSS", "Figma"],
-    image: "",
+    image: "images/projects/rcosd-desktop-app.png",
     colors: ["#4f46e5", "#9333ea"],
     links: {
       code: "https://github.com/Leeanee/RCOSD-DESKTOP-APP",
       demo: "https://drive.google.com/file/d/19KgQREosq_-VjUVAOdlGT_Ukk9jr1QWf/view?usp=drive_link"
     }
-  },
-  {
-    title: "E-Commerce Website",
-    short: "E-Commerce Website",
-    type: "Development",
-    desc: "Responsive shopping website built with Laravel, PHP, HTML, and CSS, focused on intuitive navigation, visual consistency, and a user-friendly shopping experience.",
-    tools: ["Laravel", "PHP", "HTML", "CSS"],
-    image: "",
-    colors: ["#0f766e", "#2563eb"],
-    links: {}
   }
 ];

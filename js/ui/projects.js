@@ -9,7 +9,8 @@ function initProjects() {
       const l = p.links || {};
       const links = [['Demo video', l.demo], ['Live site', l.live], ['Source code', l.code], ['Figma design', l.figma]]
         .filter(x => x[1]).map(x => `<a href="${esc(x[1])}" target="_blank" rel="noopener" aria-label="${x[0]} for ${esc(p.title)} (opens in a new tab)">${x[0]} ↗</a>`).join('');
-      const thumb = p.image ? `<img src="${esc(p.image)}" alt="Preview of ${esc(p.title)}" loading="lazy">` : esc(p.short || p.title);
+      // If the image file is missing, fall back to the colored label instead of a broken-image icon
+      const thumb = p.image ? `<img src="${esc(p.image)}" alt="Preview of ${esc(p.title)}" loading="lazy" data-fallback="${esc(p.short || p.title)}" onerror="this.replaceWith(this.dataset.fallback)">` : esc(p.short || p.title);
       return `<article class="card project"><div class="thumb" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">${thumb}</div>
         <div class="body"><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>
         <ul class="tags">${p.tools.map(t => `<li>${esc(t)}</li>`).join('')}</ul><div class="links">${links}</div></div></article>`;
