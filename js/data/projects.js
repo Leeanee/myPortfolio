@@ -18,10 +18,23 @@ const projects = [
     }
   },
   {
+    title: "RCOSD Desktop App",
+    short: "RCOSD Desktop App",
+    type: "Development",
+    desc: "Desktop version of the Office for Student Discipline system. I designed the screens in Figma, then built them in JavaFX with FXML and CSS.",
+    tools: ["JavaFX", "FXML", "CSS", "Figma"],
+    image: "images/projects/rcosd-desktop-app.png",
+    colors: ["#4f46e5", "#9333ea"],
+    links: {
+      code: "https://github.com/Leeanee/RCOSD-DESKTOP-APP",
+      demo: "https://drive.google.com/file/d/19KgQREosq_-VjUVAOdlGT_Ukk9jr1QWf/view?usp=drive_link"
+    }
+  },
+  {
     title: "RCOSD Web: Mobile-First Design",
     short: "RCOSD Web design",
     type: "UI/UX",
-    desc: "High-fidelity, mobile-first Figma design for the web platform that digitizes record keeping for the Office for Student Discipline.",
+    desc: "Mobile-first Figma design for the web platform behind the Office for Student Discipline record keeping system.",
     tools: ["Figma", "Design system", "Prototyping"],
     image: "images/projects/rcosd_figma.png",
     colors: ["#0891b2", "#2563eb"],
@@ -36,18 +49,5 @@ const projects = [
     image: "images/projects/toothWorks.png",
     colors: ["#4f46e5", "#9333ea"],
     links: { figma: "https://www.figma.com/community/file/1704348676154697636" }
-  },
-  {
-    title: "RCOSD Desktop App",
-    short: "RCOSD Desktop App",
-    type: "Development",
-    desc: "Desktop version of the Office for Student Discipline system. I designed the screens in Figma, then built them in JavaFX with FXML and CSS.",
-    tools: ["JavaFX", "FXML", "CSS", "Figma"],
-    image: "images/projects/rcosd-desktop-app.png",
-    colors: ["#4f46e5", "#9333ea"],
-    links: {
-      code: "https://github.com/Leeanee/RCOSD-DESKTOP-APP",
-      demo: "https://drive.google.com/file/d/19KgQREosq_-VjUVAOdlGT_Ukk9jr1QWf/view?usp=drive_link"
-    }
   }
 ];
